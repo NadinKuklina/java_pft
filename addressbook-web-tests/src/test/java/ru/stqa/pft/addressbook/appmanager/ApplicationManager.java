@@ -2,9 +2,7 @@ package ru.stqa.pft.addressbook.appmanager;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-
 import java.util.concurrent.TimeUnit;
-
 import static org.testng.Assert.fail;
 
 public class ApplicationManager {
@@ -19,6 +17,7 @@ public class ApplicationManager {
   public void init() {
     driver = new FirefoxDriver();
     driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+    driver.get("https://addressbook/group.php");
     groupHelper = new GroupHelper(driver);
     navigationHelper = new NavigationHelper(driver);
     sessionHelper = new SessionHelper(driver);
