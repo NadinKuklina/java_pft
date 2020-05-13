@@ -38,4 +38,16 @@ public class ContactHelper extends HelperBase {
   public void returnToHomePageFromAddAddressableEntry() {
     click(By.linkText("home page"));
   }
+
+  public void selectContact() {
+    click(By.name("selected[]"));
+  }
+
+  public void deleteSelectedContact() {
+    click(By.xpath("//input[@value='Delete']"));
+  }
+
+  public void closeAlert() {
+    driver.switchTo().alert().accept();
+  }
 }
