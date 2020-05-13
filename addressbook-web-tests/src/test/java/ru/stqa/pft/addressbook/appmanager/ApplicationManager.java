@@ -10,6 +10,7 @@ public class ApplicationManager {
   private SessionHelper sessionHelper;
   private NavigationHelper navigationHelper;
   private GroupHelper groupHelper;
+  private ContactHelper contactHelper;
   private String baseUrl;
   private boolean acceptNextAlert = true;
   private StringBuffer verificationErrors = new StringBuffer();
@@ -20,6 +21,7 @@ public class ApplicationManager {
     driver.get("https://addressbook/group.php");
     groupHelper = new GroupHelper(driver);
     navigationHelper = new NavigationHelper(driver);
+    contactHelper = new ContactHelper(driver);
     sessionHelper = new SessionHelper(driver);
     sessionHelper.login("admin", "secret");
   }
@@ -38,5 +40,9 @@ public class ApplicationManager {
 
   public NavigationHelper getNavigationHelper() {
     return navigationHelper;
+  }
+
+  public ContactHelper getContactHelper() {
+    return contactHelper;
   }
 }
