@@ -3,22 +3,47 @@ package ru.stqa.pft.addressbook.model;
 import java.util.Objects;
 
 public class GroupData {
-  private final String id;
+  private Integer id;
   private final String name;
   private final String header;
   private final String footer;
 
-  public GroupData(String id, String name, String header, String footer) {
+  public GroupData(Integer id, String name, String header, String footer) {
     this.id = id;
     this.name = name;
     this.header = header;
     this.footer = footer;
   }
-  public GroupData(String name, String header, String footer) {
-    this.id = null;
+
+    public GroupData(String name, String header, String footer) {
+    this.id = 0;
     this.name = name;
     this.header = header;
     this.footer = footer;
+  }
+
+  @Override
+  public String toString() {
+    return "GroupData{" +
+            "id='" + id + '\'' +
+            ", name='" + name + '\'' +
+            '}';
+  }
+
+  public Integer getId() {
+    return id;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public String getHeader() {
+    return header;
+  }
+
+  public String getFooter() {
+    return footer;
   }
 
   @Override
@@ -35,28 +60,7 @@ public class GroupData {
     return Objects.hash(id, name);
   }
 
-  @Override
-  public String toString() {
-    return "GroupData{" +
-            "id='" + id + '\'' +
-            ", name='" + name + '\'' +
-            '}';
+  public void setId(Integer id) {
+    this.id = id;
   }
-
-  public String getId() {
-    return id;
-  }
-
-  public String getName() {
-    return name;
-  }
-
-  public String getHeader() {
-    return header;
-  }
-
-  public String getFooter() {
-    return footer;
-  }
-
 }
